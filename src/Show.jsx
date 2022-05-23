@@ -46,13 +46,13 @@ useEffect(()=>{
   return (
     <div>
        <Timerj/>
-       <button onClick={Pay}>Pay all</button>
+      <h1> <button onClick={Pay} style={{backgroundColor:'pink'}} >Pay all</button></h1>
      
 {seat.map((all,i)=>{
   
   var colors=color.includes(all.seatNo)?'red':'green';
 
-  return <li key={i} style={{display:'inline-block' ,padding:'2%'}}><h1>{all.seatNo}</h1>
+  return <li key={i} style={{display:'inline-block' ,padding:'2%'}}><h1>{i+1}</h1>
 <h1>{all.img}</h1> 
 <h1>{all.Price}</h1>
 <button onClick={()=>Payment(all)}

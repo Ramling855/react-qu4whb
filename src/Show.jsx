@@ -1,10 +1,11 @@
 import React,{useEffect,useState} from "react";
 import "./style.css";
-import {put,add} from './seatSlice';
+import {put,add,remv} from './seatSlice';
 import {useSelector,useDispatch}from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import Timerj from'./Timer';
 import{ Link} from 'react-router-dom'
+import yellow from "@mui/material/colors/yellow";
 // import{add} from './seatSlice'
 
 
@@ -22,6 +23,10 @@ setMatch(all.seatNo);
 // if(match!==all.seatNo){out.push(seat)}
 setColor([...color,all.seatNo])
 // navigate('/Success')
+}
+const Payment1=(all)=>{
+  dispatch(remv(all))
+
 }
 console.log(match,'ma')
 console.log(seat,'tt')
@@ -51,9 +56,9 @@ useEffect(()=>{
 <h1>{all.img}</h1> 
 <h1>{all.Price}</h1>
 <button onClick={()=>Payment(all)}
- style={{backgroundcolor:colors}}>confirm</button>
+ style={{backgroundColor:colors}}>confirm</button>
  <button onClick={()=>Payment1(all)}
- style={{backgroundcolor:colors}}>remove</button>
+ style={{backgroundColor:'yellow'}}>remove</button>
  </li>
 }
 
